@@ -5,8 +5,8 @@ Description=Gaia Monitoring
 User=pi
 StandardOutput=syslog
 StandardError=syslog
-WorkingDirectory=/home/pi/Documents/
-ExecStart=/home/pi/gaia/venv/bin/python3 all.py
+WorkingDirectory=/home/pi/gaia/
+ExecStart=/home/pi/gaia/venv/bin/python3 run.py
 Restart=always
 
 [Install]
