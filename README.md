@@ -101,7 +101,8 @@ sudo systemctl disable bluetooth.service
 2. Download software
 ```
 curl -LO https://github.com/sjtrny/gaia/archive/master.zip
-unzip -d gaia master.zip
+unzip master.zip
+mv gaia-master/ gaia/
 ```
 3. Run setup
 This will automatically install dependencies, requirements etc and start the poseidon service
