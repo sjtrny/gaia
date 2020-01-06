@@ -94,7 +94,10 @@ sudo systemctl disable bluetooth.service
 
 ## Install Software
 
-1. Set timezone and hostname
+1. Configure your pi and set the following:
+    - timezone
+    - hostname
+    - enable I2C
 
 `sudo raspi-config`
 

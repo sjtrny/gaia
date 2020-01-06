@@ -1,8 +1,6 @@
 # Update apt
 apt-get -y update
 
-apt-get -y install -y i2c-tools
-
 # Create virtual env and install requirements
 apt-get -y install python3-venv
 python3 -m venv venv
