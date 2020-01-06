@@ -4,7 +4,6 @@ apt-get -y update
 # Create virtual env and install requirements
 apt-get -y install python3-venv
 python3 -m venv venv
-source venv/bin/activate
 venv/bin/python3 -m pip install -r requirements.txt
 
 # Enable and run gaia service
