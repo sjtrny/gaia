@@ -1,0 +1,13 @@
+[Unit]
+Description=Gaia Monitoring
+
+[Service]
+User=pi
+StandardOutput=syslog
+StandardError=syslog
+WorkingDirectory=/home/pi/Documents/
+ExecStart=/home/pi/gaia/venv/bin/python3 all.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
