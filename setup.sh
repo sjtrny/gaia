@@ -1,12 +1,6 @@
-# Update apt
-apt-get -y update
+#!/bin/bash
+venv_name=venv
 
-# Create virtual env and install requirements
-apt-get -y install python3-venv
-python3 -m venv venv
-venv/bin/python3 -m pip install -r requirements.txt
+virtualenv --always-copy -p python3 $venv_name
+$venv_name/bin/python3 -m pip install -r requirements.txt
 
-# Enable and run gaia service
-cp gaia.service /etc/systemd/system
-systemctl enable gaia
-systemctl start gaia
