@@ -45,9 +45,11 @@ TODO
 source venv/bin/activate
 ```
 
-3. Plug in ESP32 via USB
+3. Add wifi details to  `gaia.yml`
 
-4. Compile and upload to ESP32
+4. Plug in ESP32 via USB
+
+5. Compile and upload to ESP32
 
 ```
 		esphome gaia.yml run
