@@ -1,0 +1,50 @@
+USB Power LED
+- 2k(1%) series resistor 5V
+- Red LED
+
+3V3 Power Supply
+- AMS1117-3.3
+- 10uF/25V(10%) Ceramic Cap bypass on INPUT
+  - Reccomended by NCP1117 datasheet
+- 22uF/25V(10%) Ceramic Cap bypass on OUTPUT
+  - Reccomended by AMS1117 and LM1117 datasheet
+  - Anything >= 10uF will suffice, with improvements as capacitance is increased
+  - ESR from 0.3 Ohm to 2.2 Ohm
+
+USB Connector
+- All external pads tied to ground
+
+CP2104
+- 3V3 to VDD and REGIN
+- 5V to VBUS
+- Using bypass capacitor config from ESP32 PICO schematic https://dl.espressif.com/dl/schematics/esp32-pico-kit-v4_schematic.pdf
+  - 0.1uF/25V(10%) bypass 3V3
+  - 0.1uF/25V(10%) bypass 5V
+  - 10uF/25V(10%) bypass 5V
+- USB Connections
+  - D+ to D+
+  - D- to D-
+- Device State (https://github.com/espressif/esptool/wiki/ESP32-Boot-Mode-Selection#automatic-bootloader)
+  - DTR to GPIO0
+  - RTS to EN
+- UART to ESP32
+  - TXD to TXD
+  - RXD to RXD
+
+ES32-PICO-D4
+- POWER
+- ANTENNA (https://esp32.com/viewtopic.php?t=4554)
+- UART
+- I2C
+
+SCL
+- 10k pullup resistor
+
+SDA
+- 10k pullup resistor
+
+SHT20
+- 0.1uF/25V(10%) Ceramic Cap bypass on INPUT 3V3
+
+OPT3001
+- 0.1uF/25V(10%) Ceramic Cap bypass on INPUT 3V3

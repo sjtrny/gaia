@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name gaia)(type KiCad)(uri ${KIPRJMOD}/gaia.pretty)(options "")(descr ""))
+)

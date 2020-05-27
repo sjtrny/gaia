@@ -1,0 +1,109 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Gaia"
+Date "2020-01-23"
+Rev "v01"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 "Author: Stephen Tierney"
+$EndDescr
+$Comp
+L gaia_library:DOITESP32DEVKITV1 A3
+U 1 1 5E29D9CA
+P 6100 4200
+F 0 "A3" H 6100 5765 50  0000 C CNN
+F 1 "DOITESP32DEVKITV1" H 6100 5674 50  0000 C CNN
+F 2 "gaia:DOITESP32DEVKITV1" H 6100 4200 50  0001 C CNN
+F 3 "" H 6100 4200 50  0001 C CNN
+	1    6100 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 5E2BF2C0
+P 7150 4300
+F 0 "J1" H 7230 4292 50  0000 L CNN
+F 1 "Conn_01x02" H 7230 4201 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7150 4300 50  0001 C CNN
+F 3 "~" H 7150 4300 50  0001 C CNN
+	1    7150 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L gaia_library:PIM357 A1
+U 1 1 5E2BA687
+P 3750 3300
+F 0 "A1" V 3712 3628 50  0000 L CNN
+F 1 "PIM357" V 3803 3628 50  0000 L CNN
+F 2 "gaia:PIM357" H 3600 3300 50  0001 C CNN
+F 3 "" H 3600 3300 50  0001 C CNN
+	1    3750 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L gaia_library:ADAVEML7700 A2
+U 1 1 5E2BC9DC
+P 4700 3300
+F 0 "A2" V 4662 3628 50  0000 L CNN
+F 1 "ADAVEML7700" V 4753 3628 50  0000 L CNN
+F 2 "gaia:ADAVEML7700" H 4550 3300 50  0001 C CNN
+F 3 "" H 4550 3300 50  0001 C CNN
+	1    4700 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3550 3500 3550 4300
+Wire Wire Line
+	3950 3500 3950 4400
+Wire Wire Line
+	4900 3500 4900 4400
+Wire Wire Line
+	3950 4400 4900 4400
+Connection ~ 4900 4400
+Wire Wire Line
+	4900 4400 5600 4400
+Wire Wire Line
+	4700 3500 4700 4300
+Wire Wire Line
+	3550 4300 4700 4300
+Connection ~ 4700 4300
+Wire Wire Line
+	4700 4300 5400 4300
+Wire Wire Line
+	5600 4200 4500 4200
+Wire Wire Line
+	3850 4200 3850 3500
+Wire Wire Line
+	4500 3500 4500 4200
+Connection ~ 4500 4200
+Wire Wire Line
+	4500 4200 3850 4200
+Wire Wire Line
+	5600 4000 4600 4000
+Wire Wire Line
+	3750 4000 3750 3500
+Wire Wire Line
+	4600 3500 4600 4000
+Connection ~ 4600 4000
+Wire Wire Line
+	4600 4000 3750 4000
+Wire Wire Line
+	6600 4400 6950 4400
+Wire Wire Line
+	5400 4300 5400 4600
+Wire Wire Line
+	5400 4600 6850 4600
+Wire Wire Line
+	6850 4600 6850 4300
+Wire Wire Line
+	6850 4300 6950 4300
+Connection ~ 5400 4300
+Wire Wire Line
+	5400 4300 5600 4300
+$EndSCHEMATC

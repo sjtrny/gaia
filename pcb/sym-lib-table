@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name gaia_library)(type Legacy)(uri ${KIPRJMOD}/gaia_library.lib)(options "")(descr ""))
+  (lib (name doitesp32devkitv1)(type Legacy)(uri /Users/steve/Dropbox/steve/Documents/GitHub/poseidon/pcb/doitesp32devkitv1.lib)(options "")(descr ""))
+)
