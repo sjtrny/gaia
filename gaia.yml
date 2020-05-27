@@ -1,0 +1,105 @@
+esphome:
+  name: gaia
+  platform: ESP32
+  board: esp32doit-devkit-v1
+  includes:
+    - veml7700.h
+  libraries:
+    - "Adafruit VEML7700 Library"
+    - "Adafruit BusIO"
+
+# Enable logging
+#logger:
+#  level: VERY_VERBOSE
+
+status_led:
+  pin:
+    number: GPIO2
+
+wifi:
+  ssid: "SSID"
+  password: "PASSWORD"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "gaia Fallback Hotspot"
+    password: "wGmReCrulAVP"
+
+web_server:
+  port: 80
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+switch:
+  - platform: gpio
+    pin: 32
+    name: "Gaia Fan"
+
+binary_sensor:
+  - platform: status
+    name: "Gaia Status"
+
+i2c:
+  sda: 13
+  scl: 14
+  scan: True
+  id: bus_a
+
+dallas:
+  - pin: 27
+    update_interval: 1s
+
+sensor:
+- platform: custom
+  lambda: |-
+    auto veml = new VEML7700Sensor();
+    App.register_component(veml);
+    return {veml};
+
+  sensors:
+    name: "Gaia Light"
+    unit_of_measurement: lux
+    accuracy_decimals: 2
+
+- platform: bme680
+  temperature:
+    name: "Gaia Temperature"
+    oversampling: 16x
+  pressure:
+    name: "Gaia Pressure"
+  humidity:
+    name: "Gaia Humidity"
+    id: gaia_humidity
+  gas_resistance:
+    name: "Gaia Gas Resistance"
+  address: 0x76
+  update_interval: 1s
+
+- platform: dallas
+  address: 0x8601144D21AFAA28
+  name: "Gaia Temperature Probe"
+  id: temp_probe
+
+display:
+  - platform: adafruitlcd
+    update_interval: 10s
+    lambda: |-
+      it.clear();
+      if (id(temp_probe).has_state()) {
+        char temp_buffer[32];
+        snprintf(temp_buffer, sizeof temp_buffer, "TEMP: %.2f", id(temp_probe).state);
+        it.print(temp_buffer, 0, 0);
+      }
+      if (id(gaia_humidity).has_state()) {
+        char humi_buffer[32];
+        snprintf(humi_buffer, sizeof humi_buffer, "HUMI: %.2f", id(gaia_humidity).state);
+        it.print(humi_buffer, 0, 1);
+      }
+
