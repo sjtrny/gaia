@@ -8,20 +8,29 @@ Gaia is a custom built environment sensor. This repository contains:
 
 Gaia provides the following data:
 - Ambient Lux
-- Temperature
-- Humidity
-- Pressure
-- Gas Resistance (Air Quality)
+- Local Temperature (near device)
+- Local Humidity
+- Local Pressure
+- Local Gas Resistance (Air Quality)
+- Remote Temperature (away from device)
 
 Two I2C sensor are used to collect this data:
 - VEML770 (ambient lux)
-- BME680 (everything else)
+- BME680 (local readings)
+- DS18B20 waterproof (remote temp)
+
+Temperature and Humidity are displayed on an Adafruit LCD.
 
 Gaia runs on [ESPHome](https://esphome.io). See `gaia.yml`  for the configuration of the device.
 
+## AdaFruit RGB LCD Shield
+
+ESPHome does not have an official component for the AdaFruit RB LCD Sheild so I have written a component
+for it which you can find in the `custom_components`  folder.
+
 ## VEML7700 Support
 
-ESPHome does not have native support for the VEMl7700 device, so I have written a small device wrapper `veml7700.h`, which leverages the "Adafruit VEML7700 Library".
+ESPHome does not have an official component for the VEMl7700 device, so I have written a small device wrapper `veml7700.h`, which leverages the "Adafruit VEML7700 Library".
 
 ## Parts List
 
